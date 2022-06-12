@@ -39,8 +39,8 @@
                    if(str[4] == 'W') ++playScore
                    else if(str[4] == 'L') ++compScore
                    else if(str[4] == 'T') --i;
-                   if(playScore >= 3) return "YOU WIN!"
-                   if(compScore >= 3) return "YOU LOSE!"
+                   if(playScore >= 3) return alert("YOU WIN!")
+                   if(compScore >= 3) return alert("YOU LOSE!")
                 }
             }
             game()

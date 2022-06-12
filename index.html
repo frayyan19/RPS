@@ -31,7 +31,7 @@
             }
 
             function game(){
-                let playerScore = 0;
+                let playScore = 0;
                 let compScore = 0;
                 for(let i = 0; i < 5; i++){
                    let playerSelection =  prompt("RPS?")
@@ -39,7 +39,7 @@
                    if(str[4] == 'W') ++playScore
                    else if(str[4] == 'L') ++compScore
                    else if(str[4] == 'T') --i;
-                   if(playerScore >= 3) return "YOU WIN!"
+                   if(playScore >= 3) return "YOU WIN!"
                    if(compScore >= 3) return "YOU LOSE!"
                 }
             }

@@ -25,20 +25,27 @@
                 if(winner){
                         return "You Win! " + playerSelection + " beats " + computerSelection
                     }
-                if(playerSelection == computerSelection) return "Tie!"
+                if(playerSelection == computerSelection) return "You Tie!"
 
                 return "You Lose! " + computerSelection + " beats " + playerSelection
             }
 
-            const playerSelection = "rock";
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+            function game(){
+                let playerScore = 0;
+                let compScore = 0;
+                for(let i = 0; i < 5; i++){
+                   let playerSelection =  prompt("RPS?")
+                   let str =  playRound(playerSelection,computerPlay())
+                   if(str[4] == 'W') ++playScore
+                   else if(str[4] == 'L') ++compScore
+                   else if(str[4] == 'T') --i;
+                   if(playerScore >= 3) return "YOU WIN!"
+                   if(compScore >= 3) return "YOU LOSE!"
+                }
+            }
+            game()
             </script>
         </h1>
-    </div>
-    <!-- // <script src="rps.js">
-
-    // </script> -->
-    
+    </div>   
 </body>
 </html>

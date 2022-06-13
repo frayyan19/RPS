@@ -4,48 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rps.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors!</title>
 </head>
 <body>
-    <div>
-        <h1>
-            <script>
-            function computerPlay() {
-                const arr = ["Rock","Paper","Scissors"]
-                let val = Math.floor(Math.random()*3)
-                return arr[val]
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                playerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1,playerSelection.length).toLowerCase()
-                const rs = playerSelection === 'Rock' && computerSelection === 'Scissors'
-                const sp = playerSelection === 'Scissors' && computerSelection === 'Paper'
-                const pr = playerSelection === 'Paper' && computerSelection === 'Rock'
-                let winner = rs || sp || pr;
-                if(winner){
-                        return "You Win! " + playerSelection + " beats " + computerSelection
-                    }
-                if(playerSelection == computerSelection) return "You Tie!"
-
-                return "You Lose! " + computerSelection + " beats " + playerSelection
-            }
-
-            function game(){
-                let playScore = 0;
-                let compScore = 0;
-                for(let i = 0; i < 5; i++){
-                   let playerSelection =  prompt("RPS?")
-                   let str =  playRound(playerSelection,computerPlay())
-                   if(str[4] == 'W') ++playScore
-                   else if(str[4] == 'L') ++compScore
-                   else if(str[4] == 'T') --i;
-                   if(playScore >= 3) return alert("YOU WIN!")
-                   if(compScore >= 3) return alert("YOU LOSE!")
-                }
-            }
-            game()
-            </script>
-        </h1>
-    </div>   
+    <div class="container">
+        <div class = "row">
+            <div class="col2">
+                <h1>Rock Paper Scissors</h1>
+                <button onclick="game()" id="start">START!</button>
+            </div>
+            <div id="score" class="col3">
+                <div id="content">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="rps">
+            <div class="col2">
+                <input id="rock" type="button" value="Rock">
+            </div>
+            <div class="col2">
+                <input id="paper" type="button" value="Paper">
+            </div>
+            <div class="col2">
+                <input id="scissors" type="button" value="Scissors">
+            </div>
+        </div> 
+    </div>
 </body>
 </html>

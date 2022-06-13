@@ -33,13 +33,14 @@ function playRound(playerSelection, computerSelection) {
     const rs = playerSelection === 'Rock' && computerSelection === 'Scissors'
     const sp = playerSelection === 'Scissors' && computerSelection === 'Paper'
     const pr = playerSelection === 'Paper' && computerSelection === 'Rock'
+    const status = document.getElementById('status');
     let winner = rs || sp || pr;
     if(winner){
-            return "You Win! " + playerSelection + " beats " + computerSelection
+            status.innerHTML = `You Win! + ${playerSelection} beats ${computerSelection}`
         }
-    if(playerSelection == computerSelection) return "You Tie! " + playerSelection
+    if(playerSelection == computerSelection) return status.innerHTML = `You Tie! ${playerSelection}`
 
-    return "You Lose! " + computerSelection + " beats " + playerSelection
+    return status.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`
 }
 
 function game() {

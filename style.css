@@ -26,3 +26,7 @@
 .col3 {
     grid-column: span 3;
 }
+
+i {
+    font-size: xx-large;
+}

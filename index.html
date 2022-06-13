@@ -12,12 +12,11 @@
 <body>
     <div class="container">
         <div class = "row">
-            <div class="col1">
+            <div class="col2">
                 <h1>Rock Paper Scissors</h1>
-                <button onclick="game()" id="start">START!</button>
+                <button onclick="game()" id="'reset">RESTART GAME</button>
             </div>
-            <div id="score" class="col3">
-            </div>
+
         </div>
     </div>
     <div class="container">
@@ -28,7 +27,15 @@
                 <button id="scissors" value="Scissors"> <i class="fa-solid fa-hand-scissors"></i></button>
             </div>
         </div> 
-        <div id="status"> </div>
+    </div>
+    <div class="container">
+        <div class="row" id="rps">
+            <div id="status" class="col2"> </div>
+        </div>
+        <div class="row" id="rps">
+            <div id="score" class="col2"></div>
+        </div>
+
     </div>
 </body>
 </html>

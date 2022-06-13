@@ -8,19 +8,37 @@ const rockBtn = document.getElementById('rock')
 const paperBtn = document.getElementById('paper')
 const scissorsBtn = document.getElementById('scissors')
 
+window.onload = () => {
+    game()
+}
 
-function handleClick(rps){
-    playerSelection = rps
+function endGame(){
+    
+    if(compScore <= 0){
+        const content = document.getElementById('score');
+        content.innerHTML = `YOU WIN!`;
+        rockBtn.removeEventListener('click',handleClick) 
+        paperBtn.removeEventListener('click',handleClick) 
+        scissorsBtn.removeEventListener('click',handleClick) 
+    }
+    if(playScore <= 0){
+        const content = document.getElementById('score');
+        content.innerHTML = `YOU LOSE!`;
+        rockBtn.removeEventListener('click',handleClick) 
+        paperBtn.removeEventListener('click',handleClick) 
+        scissorsBtn.removeEventListener('click',handleClick) 
+    }
+}
+
+function handleClick(event){
+    playerSelection = event.currentTarget.value
     str =  playRound(playerSelection,computerPlay())
     playerSelection = ""
-    console.log(str)
     if(str[4] == 'W') --compScore;
     else if(str[4] == 'L') --playScore;
     const content = document.getElementById('score');
     content.innerHTML = `P: ${playScore} Lives  - C: ${compScore} Lives`;
-    
-    if(compScore == 0) return alert("YOU WIN!")
-    if(playScore == 0) return alert("YOU LOSE!")
+    endGame()
 }
 
 function computerPlay() {
@@ -47,8 +65,15 @@ function playRound(playerSelection, computerSelection) {
     return "You Lose!"
 }
 
+
 function game() {
-    rockBtn.addEventListener('click', () => handleClick('Rock'))
-    paperBtn.addEventListener('click', () => handleClick('Paper'))
-    scissorsBtn.addEventListener('click', () => handleClick('Scissors'))
+    rockBtn.addEventListener('click',handleClick)
+    paperBtn.addEventListener('click',handleClick)
+    scissorsBtn.addEventListener('click',handleClick)
+    playScore = 5;
+    compScore = 5;
+    const content = document.getElementById('score');
+    content.innerHTML = `P: ${playScore} Lives  - C: ${compScore} Lives`;
+    const status = document.getElementById('status');
+    status.innerHTML = ""
 }

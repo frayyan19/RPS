@@ -14,8 +14,8 @@ function handleClick(rps){
     str =  playRound(playerSelection,computerPlay())
     playerSelection = ""
     console.log(str)
-    if(str[4] == 'W') --playScore
-    else if(str[4] == 'L') --compScore
+    if(str[4] == 'W') --compScore;
+    else if(str[4] == 'L') --playScore;
     const content = document.getElementById('score');
     content.innerHTML = `P: ${playScore} Lives  - C: ${compScore} Lives`;
     

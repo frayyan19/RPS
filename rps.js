@@ -54,14 +54,17 @@ function playRound(playerSelection, computerSelection) {
     const status = document.getElementById('status');
     let winner = rs || sp || pr;
     if(winner){
-            status.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`
+            status.innerHTML = `You Win!
+${playerSelection} beats ${computerSelection}`
             return "You Win!"
         }
     if(playerSelection == computerSelection){
-        status.innerHTML = `You Tie! ${playerSelection}`
+        status.innerHTML = `You Tie!
+${playerSelection} VS ${computerSelection}`
         return "You Tie!"
     }
-    status.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`
+    status.innerHTML = `You Lose!
+${computerSelection} beats ${playerSelection}`
     return "You Lose!"
 }
 

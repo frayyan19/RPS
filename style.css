@@ -1,4 +1,7 @@
 
+html, body {
+	background-color: whitesmoke
+}
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -12,11 +15,8 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-content: center;
-    grid-gap: 100px;
+    grid-gap: 50px;
     margin-bottom: 20px;
-}
-div {
-    padding: 20;
 }
 
 .col1 {
@@ -29,6 +29,21 @@ div {
 
 .col3 {
     grid-column: 3;
+}
+
+#header {
+	grid-column: 1 / span 3;
+	font-size: 30px;
+	font-family: Helvetica, sans-serif;
+}
+button {
+	background-color: whitesmoke;
+	font-size: 70px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	margin: auto;
+	padding: 20px
 }
 /* .col4 {
     grid-column: 4;
@@ -46,10 +61,16 @@ div {
     grid-column: 7;
 } */
 i {
-    font-size: xx-large;
+    font-size: 50px;
+}
+#status {
+	padding: 20px;
+	font-size: 25px;
+	font-family: Helvetica, sans-serif;
+
 }
 
-.no.gap {
+.no-gap {
     grid-gap: 0;
 }
 

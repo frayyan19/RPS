@@ -60,16 +60,16 @@ function playRound(playerSelection, computerSelection) {
     const status = document.getElementById('status');
     let winner = rs || sp || pr;
     if(winner){
-            status.innerHTML = `<a style="color: rgb(130, 224, 162)">You Win!</a>
+            status.innerHTML = `<h2 style="color: rgb(130, 224, 162)">You Win!</h2>
 ${playerSelection} beats ${computerSelection}`
             return "You Win!"
         }
     if(playerSelection == computerSelection){
-        status.innerHTML = `You Tie!
+        status.innerHTML = `<h2 style="color: rgb(71, 71, 71)">You Tie!</h2>
 ${playerSelection} VS ${computerSelection}`
         return "You Tie!"
     }
-    status.innerHTML = `<a style="color: rgb(222, 112, 112)">You Lose!</a>
+    status.innerHTML = `<h2 style="color: rgb(222, 112, 112)">You Lose!</h2>
 ${computerSelection} beats ${playerSelection}`
     return "You Lose!"
 }

@@ -15,8 +15,8 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-content: center;
-    grid-gap: 50px;
-    margin-bottom: 20px;
+    grid-gap: 30px;
+    margin-bottom: 10px;
 }
 
 .col1 {
@@ -66,11 +66,11 @@ i {
 #score {
     font-size: 30px;
     font-family: Helvetica, sans-serif;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 0px;
 }
 #status {
-	padding: 20px;
+	padding: 10px;
 	font-size: 25px;
 	font-family: Helvetica, sans-serif;
 

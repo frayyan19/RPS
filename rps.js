@@ -16,14 +16,18 @@ function endGame(){
     
     if(compScore <= 0){
         const content = document.getElementById('score');
-        content.innerHTML = `YOU WIN!`;
+        content.innerHTML = `<a style="color: rgb(130, 224, 162)">YOU WIN!</a>`;
+        const cont = document.getElementById('status');
+        cont.innerHTML = ``;
         rockBtn.removeEventListener('click',handleClick) 
         paperBtn.removeEventListener('click',handleClick) 
         scissorsBtn.removeEventListener('click',handleClick) 
     }
     if(playScore <= 0){
         const content = document.getElementById('score');
-        content.innerHTML = `YOU LOSE!`;
+        content.innerHTML = `<a style="color: rgb(222, 112, 112)">YOU LOST!</a>`;
+        const cont = document.getElementById('status');
+        cont.innerHTML = ``;
         rockBtn.removeEventListener('click',handleClick) 
         paperBtn.removeEventListener('click',handleClick) 
         scissorsBtn.removeEventListener('click',handleClick) 
@@ -37,7 +41,9 @@ function handleClick(event){
     if(str[4] == 'W') --compScore;
     else if(str[4] == 'L') --playScore;
     const content = document.getElementById('score');
-    content.innerHTML = `P: ${playScore} Lives  - C: ${compScore} Lives`;
+    content.innerHTML =
+    `<i style=font-size:20px class="fa-solid fa-user-large">  ${playScore}  Lives  -</i>
+    <i style=font-size:20px class="fa-solid fa-desktop">  ${compScore}  Lives</i>`;
     endGame()
 }
 
@@ -54,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
     const status = document.getElementById('status');
     let winner = rs || sp || pr;
     if(winner){
-            status.innerHTML = `You Win!
+            status.innerHTML = `<a style="color: rgb(130, 224, 162)">You Win!</a>
 ${playerSelection} beats ${computerSelection}`
             return "You Win!"
         }
@@ -63,11 +69,10 @@ ${playerSelection} beats ${computerSelection}`
 ${playerSelection} VS ${computerSelection}`
         return "You Tie!"
     }
-    status.innerHTML = `You Lose!
+    status.innerHTML = `<a style="color: rgb(222, 112, 112)">You Lose!</a>
 ${computerSelection} beats ${playerSelection}`
     return "You Lose!"
 }
-
 
 function game() {
     rockBtn.addEventListener('click',handleClick)
@@ -76,7 +81,9 @@ function game() {
     playScore = 5;
     compScore = 5;
     const content = document.getElementById('score');
-    content.innerHTML = `P: ${playScore} Lives  - C: ${compScore} Lives`;
+    content.innerHTML = 
+    `<i style=font-size:20px class="fa-solid fa-user-large">  ${playScore}  Lives  -</i>
+    <i style=font-size:20px class="fa-solid fa-desktop">  ${compScore}  Lives</i>`;
     const status = document.getElementById('status');
     status.innerHTML = ""
 }

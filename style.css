@@ -66,6 +66,8 @@ i {
 #score {
     font-size: 30px;
     font-family: Helvetica, sans-serif;
+    padding-bottom: 30px;
+    padding-top: 0px;
 }
 #status {
 	padding: 20px;

@@ -16,18 +16,13 @@
                 <h1 style="color: rgb(71, 71, 71)">Rock <a style="color: rgb(130, 224, 162)">Paper </a><a style="color: rgb(222, 112, 112)">Scissors</a></h1>
             </div>
         </div>
-			  <div class = "no-gap">
-					<div class="col3">
-							<button onclick="game()" id="reset" style="color: rgb(0, 0, 0)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-					</div>
-        </div>
     </div>
     <div class="container">
         <div class="row" id="rps">
-            <div id="status" class="col2" style="grid-column: span 3"> </div>
+            <div id="score" class="col2"></div>
         </div>
         <div class="row" id="rps">
-            <div id="score" class="col2"></div>
+            <div id="status" class="col2" style="grid-column: span 3"> </div>
         </div>
 				<div class="row" id="rps">
 					<div class="col2" style="padding: auto;">
@@ -35,7 +30,13 @@
 							<button id="paper" value="Paper"> <i class="fa-solid fa-hand" style="color: rgb(130, 224, 162)"></i></button>
 							<button id="scissors" value="Scissors"> <i class="fa-solid fa-hand-scissors" style="color: rgb(222, 112, 112)"></i></button>
 					</div>
-			</div> 
+			</div>
+
+            <div class = "no-gap">
+                <div class="col3">
+                        <button onclick="game()" id="reset" style="color: rgb(0, 0, 0)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                </div>
+            </div>
     </div>
 </body>
 </html>
